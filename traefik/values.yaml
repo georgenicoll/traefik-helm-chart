@@ -80,6 +80,7 @@ experimental:
   kubernetesGateway:
     enabled: false
     appLabelSelector: "traefik"
+    fromRoutesNamespaces: "Same"
     certificates: []
     # - group: "core"
     #   kind: "Secret"

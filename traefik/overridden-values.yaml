@@ -1,0 +1,17 @@
+--- 
+experimental: 
+  kubernetesGateway:
+    appLabelSelector: traefik
+    fromRoutesNamespaces: All
+    certificates:
+      - 
+        group: "core"
+        kind: "Secret"
+        name: "mysecret"
+    enabled: true
+deployment:
+  podLabels:
+    app: traefik
+#providers:
+#  kubernetesCRD:
+#    allowCrossNamespace: true

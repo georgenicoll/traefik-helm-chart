@@ -12,6 +12,8 @@ spec:
       protocol: HTTP
       routes: 
         kind: HTTPRoute
+        namespaces:
+          from: {{ .Values.experimental.kubernetesGateway.fromRoutesNamespaces }}
         selector: 
           matchLabels: 
             app: {{ .Values.experimental.kubernetesGateway.appLabelSelector }}
@@ -26,6 +28,8 @@ spec:
           kind: {{ $cert.kind }}
       routes: 
         kind: HTTPRoute
+        namespaces:
+          from: {{ $.Values.experimental.kubernetesGateway.fromRoutesNamespaces }}
         selector: 
           matchLabels: 
             app: {{ $.Values.experimental.kubernetesGateway.appLabelSelector }}
